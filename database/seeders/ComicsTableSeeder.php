@@ -226,6 +226,8 @@ class ComicsTableSeeder extends Seeder
      */
     public function run(): void
     {
+        \App\Models\Comic::truncate();
+
         foreach ($this->dati as $comic) {
             $newComic = new Comic();
 
@@ -236,12 +238,8 @@ class ComicsTableSeeder extends Seeder
             $newComic->series = $comic['series'];
             $newComic->sale_date = $comic['sale_date'];
             $newComic->type = $comic['type'];
-            foreach ($comic['artists'] as $artist) {
-                $newComic->artists = $artist;
-            }
-            foreach ($comic['writers'] as $writer) {
-                $newComic->writers = $writer;
-            }
+            $newComic->artists = implode(', ', $comic['artists']);
+            $newComic->writers = implode(', ', $comic['writers']);
             
             $newComic->save();
         }
