@@ -1,35 +1,6 @@
-@php
-    $navLinks = [['name' => 'CHARACTERS'], ['name' => 'COMICS'], ['name' => 'MOVIES'], ['name' => 'TV'], ['name' => 'GAMES'], ['name' => 'COLLECTIBLES'], ['name' => 'VIDEOS'], ['name' => 'FANS'], ['name' => 'NEWS'], ['name' => 'SHOP']];
-@endphp
+@extends('layout')
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @vite(['resources/scss/app.scss', 'resources/js/app.js'])
-    <title>Document</title>
-</head>
-
-<body>
-
-    <header>
-        <div class="container d-flex justify-content-between align-items-center py-2">
-            <img src="/images/dc-logo.png" alt="">
-            <ul class="nav nav-pills d-flex list-unstyled">
-                @foreach ($navLinks as $navLink)
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            {{ $navLink['name'] }}
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
-        </div>
-    </header>
-
+@section('main')
     <main>
         <div class="hero"></div>
         <div class="container text-center py-5">
@@ -75,7 +46,4 @@
             </div>
         </div>
     </main>
-
-</body>
-
-</html>
+    @endsection

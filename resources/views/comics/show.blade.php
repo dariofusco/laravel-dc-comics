@@ -1,3 +1,6 @@
+@extends('layout')
+
+@section('main')
 <div class="container">
     <div class="col">
         <div class="card">
@@ -8,3 +11,4 @@
         </div>
     </div>
 </div>
+@endsection
