@@ -1,8 +1,7 @@
 @extends('layout')
 
 @section('main')
-    <main>
-        <div class="hero"></div>
+
         <div class="container text-center py-5">
             <span class="badge badge-primary">CURRENT SERIES</span>
             <div class="row">
@@ -45,5 +44,5 @@
                 </div>
             </div>
         </div>
-    </main>
+
     @endsection

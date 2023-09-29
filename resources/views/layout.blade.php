@@ -12,8 +12,11 @@
 <body>
 
     @include('header')
+    <main>
+        <div class="hero"></div>
+        @yield('main')
+    </main>
 
-    @yield('main')
 
     @include('footer')
 
