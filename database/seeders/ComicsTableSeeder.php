@@ -234,7 +234,7 @@ class ComicsTableSeeder extends Seeder
             $newComic->title = $comic['title'];
             $newComic->description = $comic['description'];
             $newComic->thumb = $comic['thumb'];
-            $newComic->price = intval(str_replace("$", "", $comic['price']));
+            $newComic->price = str_replace("$", "", $comic['price']);
             $newComic->series = $comic['series'];
             $newComic->sale_date = $comic['sale_date'];
             $newComic->type = $comic['type'];
