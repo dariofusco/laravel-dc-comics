@@ -36,12 +36,12 @@ class ComicController extends Controller
             $newComic->title = $data['title'];
             $newComic->description = $data['description'];
             $newComic->thumb = $data['thumb'];
-            $newComic->price = intval("$" . $data['price']);
+            $newComic->price = $data['price'];
             $newComic->series = $data['series'];
             $newComic->sale_date = $data['sale_date'];
             $newComic->type = $data['type'];
-            $newComic->artists = explode(', ', $data['artists']);
-            $newComic->writers = explode(', ', $data['writers']);
+            $newComic->artists = $data['artists'];
+            $newComic->writers = $data['writers'];
             
             $newComic->save();
 
