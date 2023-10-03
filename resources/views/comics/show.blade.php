@@ -20,7 +20,8 @@
                 <p class="text-white ">{{ $comics->description }}</p>
                 <p class="text-white"><strong class="blue">Artists:</strong> {{ $comics->artists }}</p>
                 <p class="text-white"><strong class="blue">Writers:</strong> {{ $comics->writers }}</p>
-                <a href={{ route("comics.index", ["id" => $comics->id]) }} class="btn btn-outline-primary">Back</a>
+                <a href={{ route("comics.index") }} class="btn btn-outline-primary">Back</a>
+                <a href={{ route("comics.edit", ['comic' => $comics->id]) }} class="btn btn-outline-primary">Edit</a>
             </div>
         </div>
     </div>

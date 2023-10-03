@@ -51,7 +51,7 @@ class ComicController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
         $comics = Comic::findOrFail($id);
 
@@ -61,17 +61,25 @@ class ComicController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $comics = Comic::findOrFail($id);
+
+        return view('comics.edit', ['comics' => $comics]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $comics = Comic::findOrFail($id);
+
+        $data = $request->all();
+
+        $comics->update($data);
+
+        return redirect()->route('comics.show', $comics->id);
     }
 
     /**
