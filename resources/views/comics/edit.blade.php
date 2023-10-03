@@ -46,7 +46,8 @@
                         <label class="form-label"><strong class="blue">Writers</strong></label>
                         <input type="text" class="form-control" name="writers" value="{{ $comics->writers}}">
                     </div>
-                    <a href={{ route("comics.index") }} class="btn btn-outline-primary">Back</a><button type="submit" class="btn btn-primary mx-3">Save</button>
+                    <a href={{ route("comics.index") }} class="btn btn-outline-primary">Back</a>
+                    <button type="submit" class="btn btn-primary mx-3">Save</button>
                 </form>
             </div>
         </div>
