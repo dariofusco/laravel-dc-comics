@@ -22,6 +22,11 @@
                 <p class="text-white"><strong class="blue">Writers:</strong> {{ $comics->writers }}</p>
                 <a href={{ route("comics.index") }} class="btn btn-outline-primary">Back</a>
                 <a href={{ route("comics.edit", ['comic' => $comics->id]) }} class="btn btn-outline-primary">Edit</a>
+                <form action="{{ route('comics.destroy', $comics->id) }}" method="POST" class="d-inline-block">
+                    @csrf
+                    @method("DELETE")
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                  </form>
             </div>
         </div>
     </div>

@@ -85,8 +85,12 @@ class ComicController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $comics = Comic::findOrFail($id);
+
+        $comics->delete();
+
+        return redirect()->route('comics.index');
     }
 }
