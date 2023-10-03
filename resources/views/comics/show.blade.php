@@ -3,21 +3,23 @@
 @section('main')
     <div class="container">
         <div class="row">
+            <h1 class="text-white text-center py-3"><strong class="blue">Title:</strong> {{ $comics->title }}</h1>
             <div class="col py-5">
-                <h1 class="text-white text-center py-3">Title: {{ $comics->title }}</h1>
-                <div class="card text-white text-center py-3">
+                <div class="card text-white">
                     <img class="card-img-top-big" src="{{ $comics->thumb }}" alt="">
                     <div class="card-body">
-                        <h5 class="card-text">Series: {{ $comics->series }}</h5>
-                        <p>Sale Date: {{ $comics->sale_date }}</p>
-                        <p>Price: ${{ $comics->price }}</p>
+                        <h5 class="card-text"><strong class="blue">Series:</strong> {{ $comics->series }}</h5>
+                        <p><strong class="blue">Sale Date:</strong> {{ $comics->sale_date }}</p>
+                        <p><strong class="blue">Price:</strong> ${{ $comics->price }}</p>
                     </div>
                 </div>
-                <h4 class="text-white">Type: {{ $comics->type }}</h4>
-                <h3 class="text-white py-3">Description:</h3>
+            </div>
+            <div class="col py-5">
+                <h4 class="text-white"><strong class="blue">Type:</strong> {{ $comics->type }}</h4>
+                <h3 class="py-3 blue">Description:</h3>
                 <p class="text-white ">{{ $comics->description }}</p>
-                <p class="text-white">Artists: {{ $comics->artists }}</p>
-                <p class="text-white">Writers: {{ $comics->writers }}</p>
+                <p class="text-white"><strong class="blue">Artists:</strong> {{ $comics->artists }}</p>
+                <p class="text-white"><strong class="blue">Writers:</strong> {{ $comics->writers }}</p>
                 <a href={{ route("comics.index", ["id" => $comics->id]) }} class="btn btn-outline-primary">Back</a>
             </div>
         </div>

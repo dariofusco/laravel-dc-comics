@@ -6,7 +6,7 @@
             <span class="badge badge-primary">CURRENT SERIES</span>
             <div class="row">
                 @foreach ($comics as $comic)
-                    <div class="col">
+                    <div class="col-2">
                         <div class="card">
                             <a href="{{ route('comics.show', $comic->id) }}"><img class="card-img-top" src="{{ $comic->thumb }}" alt=""></a>
                             <div class="card-body">
@@ -16,7 +16,7 @@
                     </div>
                 @endforeach
             </div>
-            <a href="{{ route('comics.create') }}" class="btn btn-primary">Add</a>
+            <a href="{{ route('comics.create') }}" class="btn btn-primary">Add New Comic</a>
         </div>
         <div class="bar">
             <div class="container">
